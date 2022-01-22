@@ -159,7 +159,7 @@ def main():
     difficulty = "words_common.txt"
     diction = wl.Word_Library(difficulty)
     word_text = "start"
-    current_word = WORD_FONT100.render(word_text,1,WHITE)
+    current_word = WORD_FONT100.render(word_text, 1, WHITE)
     user = player.Player(MAX_HEALTH)
 
     #Clock and Time
@@ -189,7 +189,7 @@ def main():
     quit_button = b.Button(RED, WIN_W/2 -150, WIN_H/2+200, 250, 100, 'Quit')
 
     can_gain = True
-    input_active = True
+    #input_active = True
     user_text = ''
 
     word_score = 0
