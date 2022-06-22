@@ -10,6 +10,7 @@ def display_title(title):
     title = WORD_FONT100.render(title,1,WHITE)
     WIN.blit(BACKGROUND,(0,0))
     WIN.blit(title, (WIN_W/2 - title.get_width()/2, WIN_H/2- title.get_height()/2 - 100))
+    
 def draw_title(button, hbtn, mbtn, qbtn):
     display_title("Aliens Aren't My Type")
     button.draw(WIN, WORD_FONT40)

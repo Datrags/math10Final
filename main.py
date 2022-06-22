@@ -1,6 +1,6 @@
 #main.py by Stephan Green and Ronak Bhagia
 #The main file for the game.
-#8/12/2021
+#8/13/2021
 import pygame, random, os, math
 from enum import Enum
 
@@ -130,14 +130,14 @@ def draw_window(current_word,user_text,word_score, char_score, sprite_id, ch,cur
 
     #Display current word
     WIN.blit(current_word,(WIN_W/2 - current_word.get_width()/2,
-        WIN_H/2 - current_word.get_height()/2))
+        WIN_H/2 - (current_word.get_height()/2)-50))
 
     #Display Text Box
     input_rect = pygame.Rect(WIN_W/2 - current_word.get_width()/2,
         WIN_H/2 - current_word.get_height()/2 + 100, current_word.get_width(), 100)
     pygame.draw.rect(WIN, GRAY, input_rect)
     text_surface = WORD_FONT100.render(user_text, 1, BLACK)
-    WIN.blit(text_surface, (input_rect.x+5, input_rect.y+5))
+    WIN.blit(text_surface, (input_rect.x, input_rect.y-20))
     input_rect.w = max(100, text_surface.get_width() + 10)
 
     #Display Scores
@@ -189,7 +189,6 @@ def main():
     quit_button = b.Button(RED, WIN_W/2 -150, WIN_H/2+200, 250, 100, 'Quit')
 
     can_gain = True
-    #input_active = True
     user_text = ''
 
     word_score = 0
